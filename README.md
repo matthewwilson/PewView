@@ -6,7 +6,7 @@ Church Presentation software built with electron ⚡
 # Clone the repository
 $ git clone https://github.com/matthewcodes/PewView
 # Go into the repository
-$ cd pewview
+$ cd PewView
 # Install dependencies
 $ npm install
 # Run the app
