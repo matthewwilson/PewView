@@ -6,14 +6,18 @@
   </head>
   <body>
     <h1>PRESENTER</h1>
-    <!-- All of the Node.js APIs are available in this renderer process. -->
-    We are using Node.js <script>document.write(process.versions.node)</script>,
-    Chromium <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
+    <div id="root"></div>
   </body>
 
+  <script src="dist/pewview_presenter_bundle.js"></script>
   <script>
-    // You can also require other files to run in this process
-    require('./renderer.js')
+    // In renderer process (web page).
+    const {ipcRenderer} = require('electron')
+    console.log(ipcRenderer.sendSync('synchronous-message', 'ping')) // prints "pong"
+
+    ipcRenderer.on('asynchronous-reply', (event, arg) => {
+    console.log(arg) // prints "pong"
+    })
+    ipcRenderer.send('asynchronous-message', 'ping')
   </script>
 </html>

@@ -1,4 +1,5 @@
 const electron = require('electron');
+const {ipcMain} = require('electron');
 // Module to control application life.
 const app = electron.app;
 // Module to create native browser window.
@@ -55,7 +56,7 @@ function createPresentationWindow(display) {
   }));
 
   // Open the DevTools.
-  //externalWindow.webContents.openDevTools()
+  externalWindow.webContents.openDevTools()
 
   // Emitted when the window is closed.
   externalWindow.on('closed', function () {
@@ -78,7 +79,7 @@ function createPresenterWindow() {
   }));
 
   // Open the DevTools.
-  //mainWindow.webContents.openDevTools()
+  mainWindow.webContents.openDevTools()
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function () {
@@ -110,3 +111,14 @@ app.on('activate', function () {
     createWindows();
   }
 });
+
+
+ipcMain.on('asynchronous-message', (event, arg) => {
+  console.log(arg)  // prints "ping"
+  event.sender.send('asynchronous-reply', 'pong')
+})
+
+ipcMain.on('synchronous-message', (event, arg) => {
+  console.log(arg)  // prints "ping"
+  event.returnValue = 'pong'
+})

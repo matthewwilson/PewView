@@ -1,5 +1,5 @@
 # PewView
-Church Presentation software built with electron ⚡
+Church Presentation software built with electron 📽
 
 ## Running in development Mode
 ```bash
