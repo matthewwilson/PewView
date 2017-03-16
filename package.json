@@ -1,0 +1,15 @@
+{
+  "name": "pewview",
+  "version": "1.0.0",
+  "description": "Church presentation software",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/matthewcodes/PewView",
+  "author": "matthewcodes",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^1.4.1"
+  }
+}
