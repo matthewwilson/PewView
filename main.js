@@ -56,7 +56,7 @@ function createPresentationWindow(display) {
   }));
 
   // Open the DevTools.
-  externalWindow.webContents.openDevTools()
+  //externalWindow.webContents.openDevTools()
 
   // Emitted when the window is closed.
   externalWindow.on('closed', function () {
@@ -113,12 +113,8 @@ app.on('activate', function () {
 });
 
 
-ipcMain.on('asynchronous-message', (event, arg) => {
-  console.log(arg)  // prints "ping"
-  event.sender.send('asynchronous-reply', 'pong')
-})
-
-ipcMain.on('synchronous-message', (event, arg) => {
-  console.log(arg)  // prints "ping"
-  event.returnValue = 'pong'
-})
+ipcMain.on('next-slide', (event, arg) => {
+  console.log(arg);
+  externalWindow.webContents.send('next-slide', arg);
+  event.sender.send('next-slide-reply', true);
+});
