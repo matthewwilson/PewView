@@ -9544,12 +9544,7 @@ var HelloWorld = function (_React$Component) {
   function HelloWorld(props) {
     _classCallCheck(this, HelloWorld);
 
-    var _this = _possibleConstructorReturn(this, (HelloWorld.__proto__ || Object.getPrototypeOf(HelloWorld)).call(this, props));
-
-    ipcRenderer.on('next-slide-reply', function (event, arg) {
-      console.log(arg);
-    });
-    return _this;
+    return _possibleConstructorReturn(this, (HelloWorld.__proto__ || Object.getPrototypeOf(HelloWorld)).call(this, props));
   }
 
   _createClass(HelloWorld, [{

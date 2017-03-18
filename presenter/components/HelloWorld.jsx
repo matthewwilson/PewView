@@ -5,9 +5,6 @@ export default class HelloWorld extends React.Component {
 
   constructor(props) {
     super(props);
-    ipcRenderer.on('next-slide-reply', (event, arg) => {
-      console.log(arg);
-    });
   }
 
   handleClick() {

@@ -4,7 +4,9 @@
   "description": "Church presentation software",
   "main": "main.js",
   "scripts": {
-    "start": "webpack --config presenter.webpack.config.js; electron ."
+    "start": "webpack --config presenter.webpack.config.js; webpack --config presentationbuilder.webpack.config.js; electron .",
+    "build": "webpack --config presenter.webpack.config.js; webpack --config presentationbuilder.webpack.config.js;",
+    "launch": "electron ."
   },
   "repository": "https://github.com/matthewcodes/PewView",
   "author": "matthewcodes",
@@ -14,9 +16,15 @@
     "babel-loader": "^6.4.1",
     "babel-preset-es2015": "^6.24.0",
     "babel-preset-react": "^6.23.0",
+    "bootstrap": "^4.0.0-alpha.6",
+    "css-loader": "^0.27.3",
     "electron": "^1.4.1",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "node-sass": "^4.5.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
+    "sass-loader": "^6.0.3",
+    "style-loader": "^0.14.1",
     "webpack": "^2.2.1"
   }
 }

@@ -10,10 +10,34 @@ const url = require('url');
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
-let mainWindow;
-let externalWindow;
+let presentationBuilderWindow;
+let presenterWindow;
+let presentationWindow;
 
-function createWindows() {
+function startPresentationBuilder() {
+  // Create the browser window.
+  presentationBuilderWindow = new BrowserWindow({width: 800, height: 600});
+
+  // and load the index.html of the app.
+  presentationBuilderWindow.loadURL(url.format({
+    pathname: path.join(__dirname,'presentationbuilder','index.html'),
+    protocol: 'file:',
+    slashes: true
+  }));
+
+  // Open the DevTools.
+  presentationBuilderWindow.webContents.openDevTools()
+
+  // Emitted when the window is closed.
+  presentationBuilderWindow.on('closed', function () {
+    // Dereference the window object, usually you would store windows
+    // in an array if your app supports multi windows, this is the time
+    // when you should delete the corresponding element.
+    presentationBuilderWindow = null;
+  });
+}
+
+function startPresentation() {
 
   var electronScreen = electron.screen;
   var displays = electronScreen.getAllDisplays();
@@ -38,18 +62,18 @@ function createWindows() {
 function createPresentationWindow(display) {
   // Create the browser window.
   if(display) {
-    externalWindow = new BrowserWindow({
+    presentationWindow = new BrowserWindow({
       fullscreen: true,
       x: displays[i].bounds.x + 50,
       y: displays[i].bounds.y + 50
     });
   } else {
-    externalWindow = new BrowserWindow({width: 800, height: 600});
+    presentationWindow = new BrowserWindow({width: 800, height: 600});
   }
 
 
   // and load the index.html of the app.
-  externalWindow.loadURL(url.format({
+  presentationWindow.loadURL(url.format({
     pathname: path.join(__dirname,'presentation','index.html'),
     protocol: 'file:',
     slashes: true
@@ -59,41 +83,41 @@ function createPresentationWindow(display) {
   //externalWindow.webContents.openDevTools()
 
   // Emitted when the window is closed.
-  externalWindow.on('closed', function () {
+  presentationWindow.on('closed', function () {
     // Dereference the window object, usually you would store windows
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
-    externalWindow = null;
+    presentationWindow = null;
   });
 }
 
 function createPresenterWindow() {
   // Create the browser window.
-  mainWindow = new BrowserWindow({width: 800, height: 600});
+  presenterWindow = new BrowserWindow({width: 800, height: 600});
 
   // and load the index.html of the app.
-  mainWindow.loadURL(url.format({
+  presenterWindow.loadURL(url.format({
     pathname: path.join(__dirname,'presenter','index.html'),
     protocol: 'file:',
     slashes: true
   }));
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools()
+  presenterWindow.webContents.openDevTools()
 
   // Emitted when the window is closed.
-  mainWindow.on('closed', function () {
+  presenterWindow.on('closed', function () {
     // Dereference the window object, usually you would store windows
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
-    mainWindow = null;
+    presenterWindow = null;
   });
 }
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-app.on('ready', createWindows);
+app.on('ready', startPresentationBuilder);
 
 // Quit when all windows are closed.
 app.on('window-all-closed', function () {
@@ -107,14 +131,12 @@ app.on('window-all-closed', function () {
 app.on('activate', function () {
   // On OS X it's common to re-create a window in the app when the
   // dock icon is clicked and there are no other windows open.
-  if (mainWindow === null) {
-    createWindows();
+  if (presentationBuilderWindow === null) {
+    startPresentationBuilder();
   }
 });
 
 
 ipcMain.on('next-slide', (event, arg) => {
-  console.log(arg);
   externalWindow.webContents.send('next-slide', arg);
-  event.sender.send('next-slide-reply', true);
 });
