@@ -1,8 +1,14 @@
 .main-menu-container {
-  background: url("../img/main-menu-pews.jpeg") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
+  background: #63b6db;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #63b6db 0%, #309dcf 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #63b6db 0%, #309dcf 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #63b6db 0%, #309dcf 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#63b6db', endColorstr='#309dcf',GradientType=0 );
+  /* IE6-9 */
   height: 100vh;
   width: 100vw; }
   .main-menu-container h1 {
@@ -14,3 +20,8 @@
 .main-menu-buttons-container {
   width: 40%;
   margin: 0 auto; }
+  .main-menu-buttons-container button {
+    color: white;
+    border-color: white; }
+  .main-menu-buttons-container button:hover {
+    background-color: #0083FF; }
