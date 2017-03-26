@@ -20,11 +20,16 @@
     "css-loader": "^0.27.3",
     "electron": "^1.4.1",
     "extract-text-webpack-plugin": "^2.1.0",
+    "jquery": "^3.2.1",
     "node-sass": "^4.5.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "sass-loader": "^6.0.3",
     "style-loader": "^0.14.1",
+    "tether": "^1.4.0",
     "webpack": "^2.2.1"
+  },
+  "dependencies": {
+    "pouchdb": "^6.1.2"
   }
 }

@@ -16,7 +16,11 @@ let presentationWindow;
 
 function startPresentationBuilder() {
   // Create the browser window.
-  presentationBuilderWindow = new BrowserWindow({width: 800, height: 600});
+  presentationBuilderWindow = new BrowserWindow({
+    width: 800,
+    height: 600,
+    title: "PewView"
+  });
 
   // and load the index.html of the app.
   presentationBuilderWindow.loadURL(url.format({
@@ -65,10 +69,15 @@ function createPresentationWindow(display) {
     presentationWindow = new BrowserWindow({
       fullscreen: true,
       x: displays[i].bounds.x + 50,
-      y: displays[i].bounds.y + 50
+      y: displays[i].bounds.y + 50,
+      title: "PewView - Presentation"
     });
   } else {
-    presentationWindow = new BrowserWindow({width: 800, height: 600});
+    presentationWindow = new BrowserWindow({
+      width: 800,
+      height: 600,
+      title: "PewView - Presentation"
+    });
   }
 
 
@@ -93,7 +102,11 @@ function createPresentationWindow(display) {
 
 function createPresenterWindow() {
   // Create the browser window.
-  presenterWindow = new BrowserWindow({width: 800, height: 600});
+  presenterWindow = new BrowserWindow({
+    width: 800,
+    height: 600,
+    title: "PewView - Presenter"
+  });
 
   // and load the index.html of the app.
   presenterWindow.loadURL(url.format({

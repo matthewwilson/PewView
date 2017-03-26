@@ -15,7 +15,8 @@
     text-align: center;
     padding-top: 25px;
     padding-bottom: 25px;
-    color: white; }
+    color: white;
+    font-family: 'Open Sans', sans-serif !important; }
 
 .main-menu-buttons-container {
   width: 40%;
@@ -25,3 +26,6 @@
     border-color: white; }
   .main-menu-buttons-container button:hover {
     background-color: #0083FF; }
+
+html {
+  font-family: 'Open Sans', sans-serif !important; }
