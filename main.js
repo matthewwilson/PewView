@@ -10,34 +10,34 @@ const url = require('url');
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
-let presentationBuilderWindow;
+let pewviewWindow;
 let presenterWindow;
 let presentationWindow;
 
-function startPresentationBuilder() {
+function startPewView() {
   // Create the browser window.
-  presentationBuilderWindow = new BrowserWindow({
+  pewviewWindow = new BrowserWindow({
     width: 800,
     height: 600,
     title: "PewView"
   });
 
   // and load the index.html of the app.
-  presentationBuilderWindow.loadURL(url.format({
-    pathname: path.join(__dirname,'presentationbuilder','index.html'),
+  pewviewWindow.loadURL(url.format({
+    pathname: path.join(__dirname,'pewview','index.html'),
     protocol: 'file:',
     slashes: true
   }));
 
   // Open the DevTools.
-  presentationBuilderWindow.webContents.openDevTools()
+  pewviewWindow.webContents.openDevTools()
 
   // Emitted when the window is closed.
-  presentationBuilderWindow.on('closed', function () {
+  pewviewWindow.on('closed', function () {
     // Dereference the window object, usually you would store windows
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
-    presentationBuilderWindow = null;
+    pewviewWindow = null;
   });
 }
 
@@ -130,7 +130,7 @@ function createPresenterWindow() {
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-app.on('ready', startPresentationBuilder);
+app.on('ready', startPewView);
 
 // Quit when all windows are closed.
 app.on('window-all-closed', function () {
@@ -144,8 +144,8 @@ app.on('window-all-closed', function () {
 app.on('activate', function () {
   // On OS X it's common to re-create a window in the app when the
   // dock icon is clicked and there are no other windows open.
-  if (presentationBuilderWindow === null) {
-    startPresentationBuilder();
+  if (pewviewWindow === null) {
+    startPewView();
   }
 });
 

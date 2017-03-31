@@ -2,15 +2,15 @@ const path = require('path');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 const extractSass = new ExtractTextPlugin({
-    filename: "pewview_presentationbuilder.css"
+    filename: "pewview.css"
 });
 
 module.exports = {
-  entry: path.join(__dirname,'presentationbuilder','index.js'),
+  entry: path.join(__dirname,'pewview','index.js'),
   target: 'electron',
   output: {
-    path: path.join(__dirname,'presentationbuilder','dist'),
-    filename: 'pewview_presentationbuilder_bundle.js'
+    path: path.join(__dirname,'pewview','dist'),
+    filename: 'pewview_bundle.js'
   },
   module: {
     loaders: [

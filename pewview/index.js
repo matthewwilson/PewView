@@ -4,6 +4,6 @@ require('bootstrap');
 require('./scss/index.scss');
 import React from 'react';
 import ReactDOM from 'react-dom';
-import PresentationBuilder from './components/PresentationBuilder.jsx';
+import PewView from './components/PewView.jsx';
 
-ReactDOM.render(<PresentationBuilder />, document.getElementById('root'));
+ReactDOM.render(<PewView />, document.getElementById('root'));

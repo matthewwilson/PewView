@@ -2,7 +2,7 @@ import React from 'react';
 import MainMenu from './mainMenu/MainMenu.jsx';
 import SongManager from './songManager/SongManager.jsx';
 
-export default class PresentationBuilder extends React.Component {
+export default class PewView extends React.Component {
 
   constructor(props) {
     super(props);
@@ -10,12 +10,20 @@ export default class PresentationBuilder extends React.Component {
       onMainMenu: true
     };
     this.loadSongManager = this.loadSongManager.bind(this)
+    this.backToMainMenu = this.backToMainMenu.bind(this)
   }
 
   loadSongManager(event) {
     this.setState({
       onMainMenu: false,
       onSongManager: true
+    });
+  }
+
+  backToMainMenu(event) {
+    this.setState({
+      onMainMenu: true,
+      onSongManager: false
     });
   }
 
@@ -26,7 +34,7 @@ export default class PresentationBuilder extends React.Component {
       );
     } else if(this.state.onSongManager) {
       return (
-        <SongManager />
+        <SongManager backToMainMenu={this.backToMainMenu} />
       );
     }
   }

@@ -4,8 +4,9 @@
   "description": "Church presentation software",
   "main": "main.js",
   "scripts": {
-    "start": "webpack --config presenter.webpack.config.js; webpack --config presentationbuilder.webpack.config.js; electron .",
-    "build": "webpack --config presenter.webpack.config.js; webpack --config presentationbuilder.webpack.config.js;",
+    "start": "webpack --config presenter.webpack.config.js; webpack --config pewview.webpack.config.js; electron .",
+    "build": "webpack --config presenter.webpack.config.js; webpack --config pewview.webpack.config.js;",
+    "build-pewview": "webpack --config pewview.webpack.config.js",
     "launch": "electron ."
   },
   "repository": "https://github.com/matthewcodes/PewView",
