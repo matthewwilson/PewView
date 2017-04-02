@@ -5,4 +5,11 @@
 .main-menu-buttons-container {
   width:40%;
   margin: 0 auto;
+  margin-top: 15px;
+}
+
+.main-menu-logo {
+  max-width: 300px;
+  padding-top: $base-margin * 3;
+  padding-bottom: $base-margin * 3;
 }

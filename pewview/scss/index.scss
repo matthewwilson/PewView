@@ -1,9 +1,20 @@
 @import 'variables';
 @import 'mainmenu';
 @import 'songmanager';
+@import 'backbutton';
 
-html {
-  font-family: 'Open Sans', sans-serif !important;
+html,body {
+ font-family: $font-family-open-sans;
+ width: 100%;
+ min-height: 100vh;
+ max-height: 100%;
+ margin: 0 0;
+
+ background: $color-teal; /* Old browsers */
+ background: -moz-linear-gradient(top, $color-teal 0%, $color-blue 100%); /* FF3.6-15 */
+ background: -webkit-linear-gradient(top, $color-teal 0%,$color-blue 100%); /* Chrome10-25,Safari5.1-6 */
+ background: linear-gradient(to bottom, $color-teal 0%,$color-blue 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$color-teal, endColorstr=$color-blue,GradientType=0 ); /* IE6-9 */
 }
 
 .pewview-container {
@@ -12,15 +23,10 @@ html {
   // -moz-background-size: cover;
   // background-size: cover;
 
-  background: #63b6db; /* Old browsers */
-  background: -moz-linear-gradient(top, #63b6db 0%, #309dcf 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #63b6db 0%,#309dcf 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #63b6db 0%,#309dcf 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#63b6db', endColorstr='#309dcf',GradientType=0 ); /* IE6-9 */
-
-  height:100vh;
-  width:100vw;
-
+  width: 100%;
+  min-height: 100vh;
+  max-height: 100%;
+  margin: 0 0;
 }
 
 h1 {
@@ -28,14 +34,16 @@ h1 {
   padding-top: $base-padding * 5;
   padding-bottom: $base-padding * 5;
   color:white;
-  font-family: 'Open Sans', sans-serif !important;
+  font-family: $font-family-open-sans;
 }
 
 .pewview-button {
   color: white;
   border-color:white;
+  font-family: $font-family-open-sans;
 }
 
 .pewview-button:hover {
-  background-color: #0083FF;
+  background-color: $color-teal-medium;
+  border-color: $color-teal-medium;
 }

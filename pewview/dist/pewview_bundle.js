@@ -25273,11 +25273,7 @@ var MainMenu = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         { className: 'main-menu-container' },
-        _react2.default.createElement(
-          'h1',
-          null,
-          'PewView'
-        ),
+        _react2.default.createElement('img', { src: './img/logo-white.png', className: 'img-fluid mx-auto d-block main-menu-logo', alt: 'PewView Logo' }),
         _react2.default.createElement(
           'div',
           { className: 'main-menu-buttons-container' },
@@ -25458,7 +25454,7 @@ var BackButton = function (_React$Component) {
         "button",
         {
           type: "button",
-          className: "btn btn-outline-primary btn-sm btn-block pewview-button align-middle",
+          className: "btn btn-outline-primary btn-sm pewview-button pewview-back-button",
           onClick: this.props.backToMainMenu },
         "BACK"
       );

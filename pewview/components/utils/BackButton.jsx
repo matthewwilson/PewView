@@ -10,7 +10,7 @@ export default class BackButton extends React.Component {
     return (
       <button
         type="button"
-        className="btn btn-outline-primary btn-sm btn-block pewview-button"
+        className="btn btn-outline-primary btn-sm pewview-button pewview-back-button"
         onClick={this.props.backToMainMenu}>
 
         BACK

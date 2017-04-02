@@ -1,34 +1,54 @@
 .main-menu-buttons-container {
   width: 40%;
-  margin: 0 auto; }
+  margin: 0 auto;
+  margin-top: 15px; }
 
-html {
-  font-family: 'Open Sans', sans-serif !important; }
+.main-menu-logo {
+  max-width: 300px;
+  padding-top: 15px;
+  padding-bottom: 15px; }
+
+.pewview-back-button {
+  margin-top: 33px;
+  margin-left: 33px;
+  padding-left: 15px;
+  padding-right: 15px; }
+
+html, body {
+  font-family: "Open Sans", sans-serif !important;
+  width: 100%;
+  min-height: 100vh;
+  max-height: 100%;
+  margin: 0 0;
+  background: #36b6af;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #36b6af 0%, #309dcf 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #36b6af 0%, #309dcf 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #36b6af 0%, #309dcf 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$color-teal, endColorstr=$color-blue,GradientType=0 );
+  /* IE6-9 */ }
 
 .pewview-container, .main-menu-container, .song-manager-container {
-  background: #63b6db;
-  /* Old browsers */
-  background: -moz-linear-gradient(top, #63b6db 0%, #309dcf 100%);
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #63b6db 0%, #309dcf 100%);
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #63b6db 0%, #309dcf 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#63b6db', endColorstr='#309dcf',GradientType=0 );
-  /* IE6-9 */
-  height: 100vh;
-  width: 100vw; }
+  width: 100%;
+  min-height: 100vh;
+  max-height: 100%;
+  margin: 0 0; }
 
 h1 {
   text-align: center;
   padding-top: 25px;
   padding-bottom: 25px;
   color: white;
-  font-family: 'Open Sans', sans-serif !important; }
+  font-family: "Open Sans", sans-serif !important; }
 
 .pewview-button {
   color: white;
-  border-color: white; }
+  border-color: white;
+  font-family: "Open Sans", sans-serif !important; }
 
 .pewview-button:hover {
-  background-color: #0083FF; }
+  background-color: #2F9C96;
+  border-color: #2F9C96; }

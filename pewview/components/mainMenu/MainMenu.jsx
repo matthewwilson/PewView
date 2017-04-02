@@ -10,7 +10,7 @@ export default class MainMenu extends React.Component {
   render() {
     return (
       <div className="main-menu-container">
-        <h1>PewView</h1>
+        <img src="./img/logo-white.png" className="img-fluid mx-auto d-block main-menu-logo" alt="PewView Logo"/>
         <div className="main-menu-buttons-container">
           <MainMenuButton buttonText="SONG MANAGER" buttonTrigger={this.props.loadSongManager}/>
         </div>
