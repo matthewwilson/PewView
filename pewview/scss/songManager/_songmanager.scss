@@ -1,0 +1,6 @@
+@import 'songManagerTable';
+@import 'songManagerToolBar';
+
+.song-manager-container {
+  @extend .pewview-container;
+}

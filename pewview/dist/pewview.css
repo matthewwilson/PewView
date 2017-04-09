@@ -8,6 +8,25 @@
   padding-top: 15px;
   padding-bottom: 15px; }
 
+.table-song-table {
+  background-color: rgba(247, 247, 249, 0.44); }
+
+.table-song-table thead th {
+  border-color: #2F9C96;
+  text-transform: uppercase; }
+
+.table-song-table th {
+  border-color: #2F9C96; }
+
+.table-song-table thead td {
+  border-color: #2F9C96; }
+
+.song-manager-toolbar-search-input {
+  width: 100% !important; }
+
+.song-manager-toolbar-row {
+  margin-bottom: 15px; }
+
 .pewview-back-button {
   margin-top: 33px;
   margin-left: 33px;

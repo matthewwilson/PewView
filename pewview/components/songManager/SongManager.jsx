@@ -1,21 +1,54 @@
 import React from 'react';
 import BackButton from '../utils/BackButton.jsx';
+import SongManagerHeader from './SongManagerHeader.jsx';
+import SongTable from './SongTable.jsx';
+import SongManagerToolBar from './SongManagerToolBar.jsx';
+import NewSong from './NewSong.jsx';
 
 export default class SongManager extends React.Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+      onSongManager: true
+    };
+    this.newSongButtonClicked = this.newSongButtonClicked.bind(this)
+    this.backToSongManager = this.backToSongManager.bind(this)
+  }
+
+  newSongButtonClicked(event) {
+    this.setState({
+      onNewSong: true,
+      onSongManager: false
+    });
+  }
+
+  backToSongManager(event) {
+    this.setState({
+      onNewSong: false,
+      onSongManager: true
+    });
   }
 
   render() {
-    return (
-      <div className="song-manager-container">
-        <div className="row">
-          <div className="col-2"><BackButton backToMainMenu={this.props.backToMainMenu}/></div>
-          <div className="col-8"><h1 className="song-manager-title">Song Manager</h1></div>
-          <div className="col-2"></div>
+
+    if(this.state.onSongManager) {
+      return (
+        <div className="song-manager-container">
+          <SongManagerHeader backToMainMenu={this.props.backToMainMenu} headerTitle="Song Manager"/>
+          <SongManagerToolBar newSongButtonClicked={this.newSongButtonClicked}/>
+          <SongTable/>
         </div>
-      </div>
-    );
+      );
+    } else if(this.state.onNewSong) {
+      return (
+        <div className="song-manager-container">
+          <SongManagerHeader backToMainMenu={this.backToSongManager} headerTitle="New Song"/>
+          <NewSong/>
+        </div>
+      );
+    }
+
+
   }
 }

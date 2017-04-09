@@ -19,6 +19,8 @@ function startPewView() {
   pewviewWindow = new BrowserWindow({
     width: 800,
     height: 600,
+    minWidth: 800,
+    minHeight: 600,
     title: "PewView"
   });
 
