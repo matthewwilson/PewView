@@ -1,0 +1,27 @@
+sudo: required
+dist: trusty
+language: c
+matrix:
+  include:
+  - os: osx
+    env: CC=clang CXX=clang++ npm_config_clang=1
+    compiler: clang
+node_js:
+- 6
+cache:
+  directories:
+  - node_modules
+install:
+- nvm install 6
+- npm install electron-builder@next
+- npm install
+- npm run dist
+script:
+- npm run dist
+deploy:
+  provider: releases
+  api_key:
+    secure: r9z5xFhcspmaO757bGJYAQVBuay4yT3NT3Y/BO9PHozsweBu7x0YH5Gg8QcoHMpc5YngnLve2503BrtNFA+/ulPwJieruJlKvy9COeuIC/0RruKG+JV0tTj1xMAZh3iOl4NGPq9h3Xs4vG3VqDCzzWs84UK0Fv36WdvvIdvFondnZBhmjudVjNfXNGMf1NetkPR/5bHRF7CpW5lXPVTuw9Xhq6eAVu7yZQ72P8RpHmTP6MVzjTw1mKKqXd6zMzqWlr0bDQZKyp1VQ69DNrFEW/2vhwWjyLo3MBYqr1OaPpSB3GXKsZmGoprVq8T+QA/DU7sDD22Q8RYM5DJqwkT+8as3otHDJemfpPjhKGLrldCBU38WuH043/A0cTkBvAODB151G5DOwvDZw/cx2e+NyUcmn6q+B81ZecORescn5QyOTOGtYsGvDGRxQieg4LCXBhoq12DA2HHRwcrFrZ0uzVNupBQE3SrwOXfTKDaZk6o4PehFbqKwXwPOp3FTEzxt+0ElDaZyF8txSLw5QodnjxF/Q26HmtKtgwdp/uMGvAjLNAfnC49MXdAXtE4y7slGvgzbA6BpZzqfRj6Q/Jhq5orTs1NyOBbqUpdm8VZRJCqcjC9EFTfTpvlPsVpCkDCZQO6N9y7Ctg2NxsYgLC0tcLIz1yvJvvo5aMRjqi19nno=
+  file: dist/pewview-1.0.0-mac.zip
+  on:
+    repo: matthewcodes/PewView
