@@ -18,7 +18,7 @@ deploy:
   provider: releases
   api_key:
     secure: jts5Hd9SyicoVT1Rd41hWdl43cSgIo45SOyPcZiqZNA+RVmv9y804D8pqBoOVf9682VVX7K9Y5L+JQrcTy1PzSqm/P8uUB2UXwAURipDeeZOcbJcdEzz2REKn768XWB4xNxLsBZkHw6lAVwtvl/Xz/pFxdm6RweEwAUhAeZEWBwT1nzj69g+3eAXRQJnv4LuieHA2Bu7vqDKPQNjADzhkSvRMj3at8wFripG8rJFSv1KrgWegGNi/79lx+4saAjfrpg7xN18zoys7NGZEEUAp9uhBcqbXCs/5ktZUmLERv+2Uy/9LIVZbTGbeiLjkUKCSvdFu40eFCyXgCb2zP2NmFSkHm0dDs8O+Zc91eXRR8/RLxQpJ5piGBKKlbxySL+J2I2k60xOGMBViCG+d9AEcXu5CCh62R89EdjZEmHpC6u1XUJS2YH3SU57jZKpde1Ac6rWeaqjtUS2bTRQXjwrevf2TAUE0ka7IeUIODl5KXLCBOOuN89LErB/44Tii9GTyuuqq/sIwZWcF9mFHZ6FN3f9awMDWfIjUJxA8zIk8tcx5vZsiChiynvNgauDIq4uocNGiFG4k6aYZvwxzvYOaaBOdLjmFZQk0anXIm8jZMD/I9S16WK2KMgTlbm9+dinNyI2bFz1gtm2O0+ESGtO3mNBNN4LDdHYRsa9FFPiTvY=
-  file: /dist/pewview-1.0.0-mac.zip
+  file: /dist/pewview-0.0.1-mac.zip
   skip_cleanup: true
   on:
     repo: "matthewcodes/PewView"
