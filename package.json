@@ -8,8 +8,8 @@
     "build": "webpack --config presenter.webpack.config.js; webpack --config pewview.webpack.config.js;",
     "build-pewview": "webpack --config pewview.webpack.config.js",
     "launch": "electron .",
-    "pack": "build --dir",
-    "dist": "build",
+    "pack": "build --dir -publish never",
+    "dist": "build --publish never",
     "postinstall": "install-app-deps"
   },
   "repository": "https://github.com/matthewcodes/PewView",
