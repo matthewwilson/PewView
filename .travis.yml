@@ -21,4 +21,4 @@ deploy:
   file: /dist/pewview-1.0.0-mac.zip
   skip_cleanup: true
   on:
-    tags: true
+    repo: "matthewcodes/PewView"
