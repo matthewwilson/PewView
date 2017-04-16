@@ -1,6 +1,6 @@
 {
   "name": "pewview",
-  "version": "0.0.2",
+  "version": "0.0.1",
   "description": "Church presentation software",
   "main": "main.js",
   "scripts": {
@@ -8,8 +8,8 @@
     "build": "webpack --config presenter.webpack.config.js; webpack --config pewview.webpack.config.js;",
     "build-pewview": "webpack --config pewview.webpack.config.js",
     "launch": "electron .",
-    "pack": "build --dir -publish never",
-    "dist": "build --publish never",
+    "pack": "build --dir",
+    "dist": "build",
     "postinstall": "install-app-deps"
   },
   "repository": "https://github.com/matthewcodes/PewView",
