@@ -1,4 +1,6 @@
 import React from 'react';
+import Verse from './Verse.jsx';
+const uuidV4 = require('uuid/v4');
 
 export default class NewSong extends React.Component {
 
@@ -14,7 +16,8 @@ export default class NewSong extends React.Component {
 
   newVerse() {
     var verse = {
-      "type":"verse"
+      "type":"verse",
+      "key":uuidV4()
     };
 
     this.setState((prevState) => ({
@@ -25,14 +28,15 @@ export default class NewSong extends React.Component {
 
 
   render() {
+
+    var verses = this.state.song.map((verse, index) => {
+      return(<Verse key={verse.key}></Verse>);
+    });
+
     return (
       <div>
         <div>
-          {this.state.song.map(verse => (
-            <div className="form-group">
-              <textarea className="form-control" rows="10"></textarea>
-            </div>
-          ))}
+          {verses}
         </div>
         <div className="row justify-content-md-center">
           <div className="col-3">

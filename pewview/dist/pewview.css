@@ -27,6 +27,14 @@
 .song-manager-toolbar-row {
   margin-bottom: 15px; }
 
+.new-song-text-area {
+  background-color: transparent;
+  border-color: transparent;
+  font-size: 16px;
+  text-align: center;
+  color: white;
+  width: 100%; }
+
 .pewview-back-button {
   margin-top: 33px;
   margin-left: 33px;

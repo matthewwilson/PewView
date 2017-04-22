@@ -34,8 +34,9 @@
     "webpack": "^2.2.1",
     "pouchdb": "^6.1.2"
   },
-  "dependencies" : {
-    "bootstrap": "^4.0.0-alpha.6"
+  "dependencies": {
+    "bootstrap": "^4.0.0-alpha.6",
+    "uuid": "^3.0.1"
   },
   "build": {
     "appId": "so.mwil.pewview"

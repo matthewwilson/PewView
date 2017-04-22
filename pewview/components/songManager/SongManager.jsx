@@ -3,7 +3,7 @@ import BackButton from '../utils/BackButton.jsx';
 import SongManagerHeader from './SongManagerHeader.jsx';
 import SongTable from './SongTable.jsx';
 import SongManagerToolBar from './SongManagerToolBar.jsx';
-import NewSong from './NewSong.jsx';
+import NewSong from './newSong/NewSong.jsx';
 
 export default class SongManager extends React.Component {
 
