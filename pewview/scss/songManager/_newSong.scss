@@ -1,8 +1,12 @@
 .new-song-text-area {
-  background-color: rgba(0, 0, 0, 0);
-  border-color: rgba(0, 0, 0, 0);
+  background-color: rgba(247, 247, 249, 0.1);
+  border-color: rgba(247, 247, 249, 0.9);
   font-size: 16px;
   text-align: center;
   color: white;
   width:100%;
+}
+
+.new-song-text-area:focus {
+  outline:0;
 }

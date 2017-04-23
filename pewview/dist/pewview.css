@@ -28,12 +28,15 @@
   margin-bottom: 15px; }
 
 .new-song-text-area {
-  background-color: transparent;
-  border-color: transparent;
+  background-color: rgba(247, 247, 249, 0.1);
+  border-color: rgba(247, 247, 249, 0.9);
   font-size: 16px;
   text-align: center;
   color: white;
   width: 100%; }
+
+.new-song-text-area:focus {
+  outline: 0; }
 
 .pewview-back-button {
   margin-top: 33px;
